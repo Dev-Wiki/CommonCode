@@ -1,4 +1,4 @@
-package net.devwiki.common;
+package net.devwiki.common.util;
 
 import android.text.TextUtils;
 
