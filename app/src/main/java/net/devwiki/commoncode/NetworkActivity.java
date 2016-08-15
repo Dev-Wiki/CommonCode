@@ -25,6 +25,6 @@ public class NetworkActivity extends AppCompatActivity {
 
     @OnClick(R.id.open_btn)
     public void onClick() {
-        NetworkUtil.openNetworkSettings(getApplicationContext());
+        NetworkUtil.openNetworkSettings(this);
     }
 }

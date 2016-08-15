@@ -1,5 +1,6 @@
 package net.devwiki.common.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -8,6 +9,10 @@ import android.os.Build;
 import android.telephony.TelephonyManager;
 
 /**
+ * 网络工具
+ * <p>网络相关的权限:</p>
+ * <p>获取网络状态 : android.permission.ACCESS_NETWORK_STATE</p>
+ * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
  * Created by zyz on 2016/8/10.
  */
 
@@ -28,13 +33,13 @@ public class NetworkUtil {
      * 打开网络设置界面
      * <p>3.0以下打开设置界面</p>
      *
-     * @param context 上下文
+     * @param activity 上下文
      */
-    public static void openNetworkSettings(Context context) {
+    public static void openNetworkSettings(Activity activity) {
         if (android.os.Build.VERSION.SDK_INT > Build.VERSION_CODES.GINGERBREAD_MR1) {
-            context.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
+            activity.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
         } else {
-            context.startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+            activity.startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
         }
     }
 
@@ -52,7 +57,6 @@ public class NetworkUtil {
 
     /**
      * 判断网络是否可用
-     * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
      */
     public static boolean isAvailable(Context context) {
         NetworkInfo info = getActiveNetworkInfo(context);
@@ -61,8 +65,6 @@ public class NetworkUtil {
 
     /**
      * 判断网络是否连接
-     * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
-     *
      * @param context 上下文
      * @return true: 是<br>false: 否
      */
@@ -73,8 +75,6 @@ public class NetworkUtil {
 
     /**
      * 判断网络是否是4G
-     * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
-     *
      * @param context 上下文
      * @return true: 是<br>false: 不是
      */
@@ -85,8 +85,6 @@ public class NetworkUtil {
 
     /**
      * 判断wifi是否连接状态
-     * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
-     *
      * @param context 上下文
      * @return true: 连接<br>false: 未连接
      */
@@ -130,8 +128,6 @@ public class NetworkUtil {
 
     /**
      * 获取当前的网络类型(WIFI,2G,3G,4G)
-     * <p>需添加权限 android.permission.ACCESS_NETWORK_STATE</p>
-     *
      * @param context 上下文
      * @return 网络类型
      * <ul>
@@ -200,33 +196,29 @@ public class NetworkUtil {
 
     /**
      * 获取当前的网络类型(WIFI,2G,3G,4G)
-     * <p>依赖上面的方法</p>
-     *
      * @param context 上下文
      * @return 网络类型名称
-     * <ul>
-     * <li>NETWORK_WIFI   </li>
+     * <li>NETWORK_WIFI</li>
      * <li>NETWORK_4G     </li>
      * <li>NETWORK_3G     </li>
      * <li>NETWORK_2G     </li>
      * <li>NETWORK_UNKNOWN</li>
      * <li>NETWORK_NO     </li>
-     * </ul>
      */
     public static String getNetWorkTypeName(Context context) {
         switch (getNetWorkType(context)) {
             case NETWORK_WIFI:
-                return "NETWORK_WIFI";
+                return "Wifi";
             case NETWORK_4G:
-                return "NETWORK_4G";
+                return "4G";
             case NETWORK_3G:
-                return "NETWORK_3G";
+                return "3G";
             case NETWORK_2G:
-                return "NETWORK_2G";
+                return "2G";
             case NETWORK_NO:
-                return "NETWORK_NO";
+                return "NO";
             default:
-                return "NETWORK_UNKNOWN";
+                return "UNKNOWN";
         }
     }
 }
