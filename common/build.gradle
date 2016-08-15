@@ -28,12 +28,12 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.1.0'
     testCompile 'junit:junit:4.12'
-    compile (name : 'log-release', ext : 'aar')
+//    // https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
+//    compile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.6.5'
+//    // https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
+//    compile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.6.5'
+//    // https://mvnrepository.com/artifact/org.robolectric/robolectric
+//    compile group: 'org.robolectric', name: 'robolectric', version: '3.1.2'
 
-    // https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
-    compile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.6.5'
-    // https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
-    compile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.6.5'
-    // https://mvnrepository.com/artifact/org.robolectric/robolectric
-    compile group: 'org.robolectric', name: 'robolectric', version: '3.1.2'
+    compile group: 'net.devwiki.log', name: 'log', version: '0.0.1'
 }
