@@ -23,11 +23,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.network_btn})
+    @OnClick({R.id.network_btn, R.id.file_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.network_btn:
                 startActivity(new Intent(this, NetworkActivity.class));
+                break;
+            case R.id.file_btn:
+                startActivity(new Intent(this, FileActivity.class));
                 break;
         }
     }

@@ -13,9 +13,16 @@
         android:orientation="vertical">
         <Button
             android:id="@+id/network_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="NetworkUtil"/>
+
+        <Button
+            android:id="@+id/file_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="FileUtil"/>
     </LinearLayout>
 </ScrollView>
