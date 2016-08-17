@@ -12,9 +12,6 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.network_btn)
-    Button networkBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.network_btn, R.id.file_btn})
+    @OnClick({R.id.network_btn, R.id.file_btn, R.id.device_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.network_btn:
@@ -31,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.file_btn:
                 startActivity(new Intent(this, FileActivity.class));
+                break;
+            case R.id.device_btn:
+                startActivity(new Intent(this, DeviceActivity.class));
                 break;
         }
     }
