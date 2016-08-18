@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.network_btn, R.id.file_btn, R.id.device_btn})
+    @OnClick({R.id.network_btn, R.id.file_btn, R.id.device_btn, R.id.screen_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.network_btn:
@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.device_btn:
                 startActivity(new Intent(this, DeviceActivity.class));
+                break;
+            case R.id.screen_btn:
+                startActivity(new Intent(this, ScreenActivity.class));
                 break;
         }
     }

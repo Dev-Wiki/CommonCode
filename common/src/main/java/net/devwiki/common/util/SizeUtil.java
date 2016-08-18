@@ -5,29 +5,29 @@ import android.util.DisplayMetrics;
 
 /**
  * 尺寸工具类
- * Created by zyz on 2016/8/7.
+ * Created by DevWiki on 2016/8/7.
  */
 
 public class SizeUtil {
 
-    public static float dp2px(Context context, float dp) {
+    public static int dp2px(Context context, float dp) {
         final float scale = context.getResources().getDisplayMetrics().density;
-        return dp * scale + 0.5f;
+        return (int) (dp * scale + 0.5f);
     }
 
-    public static float px2dp(Context context, float px) {
+    public static int px2dp(Context context, float px) {
         final float scale = context.getResources().getDisplayMetrics().density;
-        return px / scale + 0.5f;
+        return (int) (px / scale + 0.5f);
     }
 
-    public static float px2sp(Context context, float px) {
+    public static int px2sp(Context context, float px) {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return px / fontScale + 0.5f;
+        return (int) (px / fontScale + 0.5f);
     }
 
-    public static float sp2px(Context context, float sp) {
+    public static int sp2px(Context context, float sp) {
         final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return sp * fontScale + 0.5f;
+        return (int) (sp * fontScale + 0.5f);
     }
 
     public static DisplayMetrics getMetrics(Context context) {

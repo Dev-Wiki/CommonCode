@@ -20,6 +20,7 @@ public class FileUtil {
 
     /**
      * SD卡是否挂载
+     *
      * @return true:挂载
      */
     public static boolean isSDMounted() {
@@ -28,6 +29,7 @@ public class FileUtil {
 
     /**
      * 获取SD根目录
+     *
      * @return SD根目录且尾部带有"/"
      */
     public static String getSDRootPath() {
@@ -36,6 +38,7 @@ public class FileUtil {
 
     /**
      * 获取下载文件夹
+     *
      * @return 下载文件夹路径
      */
     public static String getDownloadDir() {
@@ -45,10 +48,11 @@ public class FileUtil {
 
     /**
      * 文件是否存在
+     *
      * @param path 文件路径
      * @return true:存在,false:不存在
      */
-    public static boolean isExists(String path){
+    public static boolean isExists(String path) {
         if (!isSDMounted()) {
             DevLog.w("sdcard is not mount!");
             return false;
@@ -62,6 +66,7 @@ public class FileUtil {
 
     /**
      * 创建文件或文件夹
+     *
      * @param path 路径
      * @return true:创建成功
      */
@@ -93,6 +98,7 @@ public class FileUtil {
 
     /**
      * 删除文件
+     *
      * @param path 文件路径
      * @return true:删除成功
      */
@@ -120,6 +126,7 @@ public class FileUtil {
 
     /**
      * 删除文件夹,此操作可能耗时,建议在子线程调用
+     *
      * @param path 文件路径
      * @return true:删除成功
      */
@@ -163,6 +170,7 @@ public class FileUtil {
 
     /**
      * 获取SD卡空间大小,单位:B
+     *
      * @return SD大小
      */
     public static long getSDSizeInByte() {
@@ -181,6 +189,7 @@ public class FileUtil {
 
     /**
      * 获取SD空间大小,单位:KB
+     *
      * @return SD大小
      */
     public static long getSDSizeInKB() {
@@ -189,6 +198,7 @@ public class FileUtil {
 
     /**
      * 获取SD空间大小,单位:MB
+     *
      * @return SD大小
      */
     public static long getSDSizeInMB() {
@@ -197,6 +207,7 @@ public class FileUtil {
 
     /**
      * 获取SD剩余空间大小,单位:B
+     *
      * @return SD剩余大小
      */
     public static long getSDFreeSizeInByte() {
@@ -215,6 +226,7 @@ public class FileUtil {
 
     /**
      * 获取SD剩余空间大小,单位:KB
+     *
      * @return SD剩余大小
      */
     public static long getSDFreeSizeInKB() {
@@ -223,6 +235,7 @@ public class FileUtil {
 
     /**
      * 获取SD剩余空间大小,单位:MB
+     *
      * @return SD剩余大小
      */
     public static long getSDFreeSizeInMB() {
@@ -231,10 +244,11 @@ public class FileUtil {
 
     /**
      * 获取文件/文件夹的空间大小
+     *
      * @param path 路径
-     * @return 占用空间大小,单位:B
+     * @return 占用空间大小, 单位:B
      */
-    public static long getSizeInByte(String path){
+    public static long getSizeInByte(String path) {
         if (!isSDMounted()) {
             DevLog.w("sd is not mounted!");
             return 0L;
@@ -254,21 +268,23 @@ public class FileUtil {
 
     /**
      * 获取文件或路径空大小
+     *
      * @param path 路经
-     * @return 占用空间大小,单位:KB
+     * @return 占用空间大小, 单位:KB
      */
-    public static float getSizeInKB(String path){
+    public static float getSizeInKB(String path) {
         long size = getSizeInByte(path);
-        return 1.0F*size/1024;
+        return 1.0F * size / 1024;
     }
 
     /**
      * 获取文件或路径空大小
+     *
      * @param path 路经
-     * @return 占用空间大小,单位:MB
+     * @return 占用空间大小, 单位:MB
      */
-    public static float getSizeInMB(String path){
+    public static float getSizeInMB(String path) {
         long size = getSizeInByte(path);
-        return 1.0F*size/1024/1024;
+        return 1.0F * size / 1024 / 1024;
     }
 }

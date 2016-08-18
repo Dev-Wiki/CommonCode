@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
@@ -26,6 +25,8 @@
         <activity android:name=".FileActivity">
         </activity>
         <activity android:name=".DeviceActivity">
+        </activity>
+        <activity android:name=".ScreenActivity">
         </activity>
     </application>
 
