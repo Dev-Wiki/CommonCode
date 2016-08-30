@@ -56,6 +56,8 @@ public class NetworkUtil {
 
     /**
      * 判断网络是否可用
+     * @param context 上下文
+     * @return 是否连接
      */
     public static boolean isAvailable(Context context) {
         NetworkInfo info = getActiveNetworkInfo(context);
@@ -111,12 +113,10 @@ public class NetworkUtil {
      *
      * @param context 上下文
      * @return 手机制式
-     * <ul>
-     * <li>PHONE_TYPE_NONE: 0 手机制式未知</li>
-     * <li>PHONE_TYPE_GSM : 1 手机制式为GSM，移动和联通</li>
-     * <li>PHONE_TYPE_CDMA : 2 手机制式为CDMA，电信</li>
-     * <li>PHONE_TYPE_SIP : 3</li>
-     * </ul>
+     * PHONE_TYPE_NONE: 0 手机制式未知
+     * PHONE_TYPE_GSM : 1 手机制式为GSM，移动和联通
+     * PHONE_TYPE_CDMA : 2 手机制式为CDMA，电信
+     * PHONE_TYPE_SIP : 3
      */
     public static int getPhoneType(Context context) {
         TelephonyManager tm = (TelephonyManager) context
@@ -130,12 +130,6 @@ public class NetworkUtil {
      *
      * @param context 上下文
      * @return 网络类型
-     * <li>1: {@link NetworkUtil#NETWORK_WIFI}</li>
-     * <li>2: {@link NetworkUtil#NETWORK_2G}</li>
-     * <li>3: {@link NetworkUtil#NETWORK_3G}</li>
-     * <li>4: {@link NetworkUtil#NETWORK_4G}</li>
-     * <li>5: {@link NetworkUtil#NETWORK_UNKNOWN}</li>
-     * <li>-1: {@link NetworkUtil#NETWORK_NO}</li>
      */
     public static int getNetWorkType(Context context) {
         int netType = NETWORK_NO;
@@ -197,12 +191,6 @@ public class NetworkUtil {
      *
      * @param context 上下文
      * @return 网络类型名称
-     * <li>WiFi   </li>
-     * <li>4G     </li>
-     * <li>3G     </li>
-     * <li>2G     </li>
-     * <li>UNKNOWN</li>
-     * <li>NO     </li>
      */
     public static String getNetWorkTypeName(Context context) {
         switch (getNetWorkType(context)) {

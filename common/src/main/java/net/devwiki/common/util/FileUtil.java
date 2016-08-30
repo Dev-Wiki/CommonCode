@@ -5,11 +5,9 @@ import android.os.Environment;
 import android.os.StatFs;
 import android.text.TextUtils;
 
-import net.devwiki.log.BuildConfig;
 import net.devwiki.log.DevLog;
 
 import java.io.File;
-import java.io.FileDescriptor;
 import java.io.IOException;
 
 /**

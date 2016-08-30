@@ -1,5 +1,28 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'common'
+
+    publishedGroupId = 'net.devwiki.common'
+    artifact = 'common'
+    libraryName = 'common'
+
+    libraryVersion = '0.0.1'
+    libraryDescription = 'Android Develop Common Util or Code!'
+
+    siteUrl = 'https://github.com/Dev-Wiki/CommonCode'
+    gitUrl = 'https://github.com/Dev-Wiki/CommonCode.git'
+
+    developerId = 'DevWiki'
+    developerName = 'DevWiki'
+    developerEmail = 'bozhou2010@live.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -25,15 +48,18 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:support-annotations:23.3.0'
     testCompile 'junit:junit:4.12'
-//    // https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
-//    compile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.6.5'
-//    // https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
-//    compile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.6.5'
-//    // https://mvnrepository.com/artifact/org.robolectric/robolectric
-//    compile group: 'org.robolectric', name: 'robolectric', version: '3.1.2'
-
-    compile group: 'net.devwiki.log', name: 'log', version: '0.0.1'
+    //    // https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4
+    //    compile group: 'org.powermock', name: 'powermock-module-junit4', version: '1.6.5'
+    //    // https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito
+    //    compile group: 'org.powermock', name: 'powermock-api-mockito', version: '1.6.5'
+    //    // https://mvnrepository.com/artifact/org.robolectric/robolectric
+    //    compile group: 'org.robolectric', name: 'robolectric', version: '3.1.2'
+    compile 'net.devwiki.log:log:0.0.1'
 }
+
+apply from: '../installv1.gradle'
+apply from: '../bintrayv1.gradle'

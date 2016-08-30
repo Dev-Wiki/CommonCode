@@ -10,7 +10,7 @@ public class StringUtil {
     /**
      * 不为null并且长度大于0
      * @param data 字符串
-     * @return true: 不为bull且length>0
+     * @return true: 不为bull且length大于0
      */
     public static boolean isNotEmpty(String data) {
         return data != null && data.length() > 0;

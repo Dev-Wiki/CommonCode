@@ -24,8 +24,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.jakewharton:butterknife:8.2.1'
     apt 'com.jakewharton:butterknife-compiler:8.2.1'
-    compile 'com.android.support:appcompat-v7:23.3.0'
-    compile group: 'net.devwiki.log', name: 'log', version: '0.0.1'
     testCompile 'junit:junit:4.12'
     compile project(':common')
 }
